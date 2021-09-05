@@ -93,7 +93,7 @@ const LoginPage = () => {
               Create Account
             </a>
             <Button
-              onClick={() => setStepper(true)}
+              onClick={() => setStepper(false)}
               className={classes.btn}
               variant="contained"
               color="primary"
@@ -138,7 +138,7 @@ const LoginPage = () => {
               Forgot password
             </Typography>
             <Button
-              onClick={() => setStepper(false)}
+              onClick={() => setStepper(true)}
               className={classes.btn}
               disableElevation
               variant="contained"
