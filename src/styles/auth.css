@@ -1,0 +1,23 @@
+.google--form {
+  width: 28%;
+  padding: 40px 40px 100px 40px;
+  margin: 6rem auto;
+  border-radius: 9px;
+  border: 1px solid #ccc;
+}
+.account-card {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 48px;
+  margin: 20px auto;
+}
+@media screen and (max-width: 620px) {
+  .google--form {
+    width: 90%;
+    padding: 20px 10px 80px 10px;
+    border: none;
+  }
+}
