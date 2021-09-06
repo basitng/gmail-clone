@@ -13,6 +13,9 @@ import "../styles/auth.css";
 import { Person } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
+  input: {
+    fontFamily: "poppin",
+  },
   link: {
     color: "#1A73E8",
     textDecoration: "none",
@@ -48,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingTop: "3rem",
+    paddingTop: "2rem",
   },
   center: {
     textAlign: "center",
@@ -57,9 +60,8 @@ const useStyles = makeStyles((theme) => ({
 const LoginPage = () => {
   const classes = useStyles();
 
-  const [stepper, setStepper] = useState(false);
-
-  const emailStepper = () => {
+  const [stepper, setStepper] = useState(true);
+  const handlemailStepper = () => {
     return (
       <React.Fragment>
         <Typography variant="h5" align="center">
@@ -70,6 +72,7 @@ const LoginPage = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} lg={12}>
             <TextField
+              className={classes.input}
               variant="outlined"
               label="Email or Phone"
               fullWidth
@@ -79,13 +82,13 @@ const LoginPage = () => {
         <Typography variant="button" className={classes.link}>
           Forgot email?
         </Typography>
-        <br />
+
         <div className="action">
           <Typography className="Push--down" variant="subtitle2">
             Not your computer? Use Guest mode to sign in privately.
           </Typography>
           <a href="" className={classes.link}>
-            Learn more
+            <b>Learn more</b>
           </a>
 
           <div className={classes.flex}>
@@ -97,6 +100,7 @@ const LoginPage = () => {
               className={classes.btn}
               variant="contained"
               color="primary"
+              disableElevation
             >
               Next
             </Button>
@@ -105,7 +109,7 @@ const LoginPage = () => {
       </React.Fragment>
     );
   };
-  const passwordStepper = () => {
+  const handlePasswordStepper = () => {
     return (
       <React.Fragment>
         <Typography variant="h5" color="textPrimary" align="center">
@@ -121,6 +125,7 @@ const LoginPage = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} lg={12}>
             <TextField
+              className={classes.input}
               variant="outlined"
               label="Enter your password"
               fullWidth
@@ -138,7 +143,6 @@ const LoginPage = () => {
               Forgot password
             </Typography>
             <Button
-              onClick={() => setStepper(true)}
               className={classes.btn}
               disableElevation
               variant="contained"
@@ -198,7 +202,7 @@ const LoginPage = () => {
             </g>
           </svg>
         </center>
-        {stepper === false ? passwordStepper() : emailStepper()}
+        {stepper === false ? handlePasswordStepper() : handlemailStepper()}
       </form>
     </React.Fragment>
   );

@@ -5,12 +5,21 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "poppin" !important;
 }
 body {
-  font-family: "poppin";
   font-size: 14px;
 }
 .Push--down {
-  padding-top: 5rem !important;
+  padding-top: 3rem !important;
   display: block;
+  color: #f3a8a2;
+}
+.push--left {
+  padding: 0.5rem 1rem 0rem 1rem;
+}
+.gb_Ve {
+  fill: #555;
+  width: 25px;
+  height: 25px;
 }
